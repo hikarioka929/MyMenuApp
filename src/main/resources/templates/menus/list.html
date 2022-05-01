@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>メニュー一覧 | 献立アプリ</title>
+</head>
+<body>
+<h1>メニュー一覧</h1>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>説明</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="menu : ${menuList}">
+        <th th:text="${menu.menuId}">(menuId)</th>
+        <td th:text="${menu.description}">(description)</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
