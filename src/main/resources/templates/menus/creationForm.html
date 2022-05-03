@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>メニュー作成 | 献立アプリ</title>
+</head>
+<body>
+<h1>メニュー作成</h1>
+<form action="#" th:action="@{/menus}" th:method="post" th:object="${menuForm}">
+    <div>
+        <label for="menuNameInput">メニュー名</label>
+        <input type="text" id="menuNameInput" th:field="*{menuName}">
+        <p th:if="${#fields.hasErrors('menuName')}" th:errors="*{menuName}">error</p>
+    </div>
+    <div>
+        <label for="descriptionInput">説明</label>
+        <textarea type="text" id="descriptionInput" row="10" th:field="*{description}"></textarea>
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">error</p>
+    </div>
+    <div>
+        <button type="submit">作成</button>
+    </div>
+</form>
+</body>
+</html>
